@@ -11,7 +11,7 @@ pipeline {
       steps {
         echo 'Build Stage'
         sh '''echo PATH = ${PATH}
-echo M2_HOME = ${M2_HOME}
+echo M2_HOME = ${M3}
 mvn clean compile'''
       }
     }
