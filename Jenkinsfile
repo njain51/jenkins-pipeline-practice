@@ -1,10 +1,14 @@
 pipeline {
-  agent any
+  agent {
+    docker {
+      image 'maven:3.3.9-jdk-8'
+    }
+
+  }
   stages {
     stage('Checkout') {
       steps {
-        echo 'Checkout Stage'
-        tool(name: 'M3', type: 'maven')
+        echo 'Initialize Stage'
       }
     }
     stage('Build') {
