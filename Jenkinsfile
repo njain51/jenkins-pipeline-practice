@@ -2,6 +2,7 @@ pipeline {
   agent {
     docker {
       image 'maven:3.3.9-jdk-8'
+      args '/var/jenkins_home/.m2: /root/.m2'
     }
 
   }
@@ -15,7 +16,7 @@ pipeline {
       steps {
         echo 'Build Stage'
         sh '''echo PATH = ${PATH}
-echo M2_HOME = ${M3}
+echo M2_HOME = ${M2_HOME}
 mvn clean compile'''
       }
     }
