@@ -22,6 +22,7 @@ mvn clean compile'''
     stage('Test') {
       steps {
         echo 'Testing Stage'
+        sh 'mvn test'
         junit '**/target/surefire-reports/TEST-*.xml'
       }
     }
