@@ -1,3 +1,13 @@
+@Library('pipeline-library-demo')_
+
+stage('Demo') {
+
+  echo 'Hello World'
+
+  sayHello 'Nitin'
+
+}
+
 pipeline {
   agent any
   stages {
